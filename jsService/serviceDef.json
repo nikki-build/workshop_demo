@@ -1,0 +1,25 @@
+{
+    "stackable": false,
+    "srvID": "npOUJKD-OH9jGh_xBMWO0",
+    "instID": "GLw6IdrYPbi6ln241GoCU",
+    "proglang": "js",
+    "sysDef": false,
+    "iconName": "air-ballon-balloon.svg",
+    "iDf": {
+        "ioType": "voidType",
+        "name": "",
+        "data": {},
+        "desc": "bulb state"
+    },
+    "oDf": {
+        "ioType": "voidType",
+        "name": "",
+        "data": {},
+        "desc": "does not accept send any output"
+    },
+    "name": "jsTest",
+    "dispName": "jsTest",
+    "desc": "browser bulb test",
+    "startType": "manual",
+    "isExtern": true
+}

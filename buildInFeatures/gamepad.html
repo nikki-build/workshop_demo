@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamepad</title>
+</head>
+
+<body>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API
+
+        window.addEventListener("gamepadconnected", (e) => {
+            console.log(
+                "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+                e.gamepad.index,
+                e.gamepad.id,
+                e.gamepad.buttons.length,
+                e.gamepad.axes.length
+            );
+
+            alert("connected")
+        });
+
+        window.addEventListener("gamepaddisconnected", (e) => {
+            console.log(
+                "Gamepad disconnected from index %d: %s",
+                e.gamepad.index,
+                e.gamepad.id
+            );
+
+            alert("disconnected")
+        });
+
+    </script>
+
+</body>
+
+</html>

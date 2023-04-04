@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js client nikki.build</title>
+
+    <!-- To load it from your server. -->
+    <script src="nikkijs.min.js"></script>
+
+
+    <script>
+        var jsInst = undefined
+
+        async function initFunction() {
+            // nikki is the namespace. for your nikki.build js client library.
+            jsInst = new nikki.serviceBase()
+
+        }
+
+        async function loadTokenFunction(event) {
+            // nikki is the namespace. for your nikki.build js client library.
+            try {
+
+                if (jsInst) {
+                    let stat = await jsInst.loadTokenFromFileHanlder(event)
+                    await jsInst.start()
+                    console.log("token loading status : ", stat)
+                }
+                else {
+                    alert("javascript file loading is not done yet.\n check console log.")
+                }
+            }
+            catch (e) {
+                console.error('exception while, loadTokenFunction ', e.message)
+            }
+        }
+
+    </script>
+
+</head>
+
+<body onload="initFunction()">
+
+    <!-- <div class="myDiv">
+        <h2>Status <span id="statusID"> </span></h2>
+    </div> -->
+
+
+    <div style="display: flex; align-items: center;">
+        <img src="./off.svg" id="imgID" width="126px" height="126px">
+    </div>
+
+    <div title="download from playground">
+        load service token from serviceToken.json file <input type="file" name="" id=""
+            onchange="loadTokenFunction(event)">
+
+    </div>
+
+</body>
+
+</html>

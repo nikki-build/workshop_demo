@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js client nikki.build</title>
+
+    <!-- To load it from your server. -->
+    <script src="nikkijs.min.js"></script>
+
+
+    <!-- To load nikki.build js client from CDN :  https://www.jsdelivr.com/package/npm/nikki.js?path=dist  -->
+    <!-- look for latest version of library -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/nikki.js@0.0.16/dist/nikkijs.min.js"></script> -->
+
+    <script>
+        var jsInst = undefined
+
+        async function initFunction() {
+            // nikki is the namespace. for your nikki.build js client library.
+            jsInst = new nikki.serviceBase()
+
+
+            let cbackID = jsInst.addEventListener("connected", connectedCallbackFunction)
+            jsInst.addEventListener("disConnected", disConnectedCallbackFunction)
+            jsInst.addEventListener("data", onDataCallbackFunction)
+
+            //  jsInst.addEventListener
+            //  remove the callback by passing the ID.
+            console.info("init is successfull")
+        }
+
+
+        function connectedCallbackFunction() {
+            console.log("connected :")
+            document.getElementById("statusID").innerHTML = 'connected'
+        }
+
+        function disConnectedCallbackFunction() {
+            console.log("disConneced :")
+            document.getElementById("statusID").innerHTML = 'disconnected'
+        }
+
+        function onDataCallbackFunction(data) {
+            try {
+                console.log("data :", data)
+                let jData = JSON.stringify(data)
+                document.getElementById("dataStatusID").innerHTML = jData
+
+                if (data && data.state) {
+                    if (data.state == "on") {
+                        console.info("command: on")
+                        document.getElementById('imgID').src = "on.svg"
+
+                    }
+                    if (data.state == "off") {
+                        console.info("command: off")
+                        document.getElementById('imgID').src = "off.svg"
+                    }
+
+                }
+
+            }
+            catch (e) {
+                console.error('exception while, onDataCallbackFunction ', e.message)
+            }
+        }
+
+        async function loadTokenFunction(event) {
+            // nikki is the namespace. for your nikki.build js client library.
+            try {
+
+                if (jsInst) {
+                    let stat = await jsInst.loadTokenFromFileHanlder(event)
+                    await jsInst.start()
+                    console.log("token loading status : ", stat)
+                }
+                else {
+                    alert("javascript file loading is not done yet.\n check console log.")
+                }
+            }
+            catch (e) {
+                console.error('exception while, loadTokenFunction ', e.message)
+            }
+        }
+
+        let count = 0
+        async function sendData() {
+            // nikki is the namespace. for your nikki.build js client library.
+            try {
+                let data = {}
+                data.count = count++
+
+                if (jsInst) {
+                    let stat = await jsInst.sendData(data)
+                    console.log("sending status. : ", stat)
+                }
+                else {
+                    alert("javascript file loading is not done yet.\n check console log.")
+                }
+            }
+            catch (e) {
+                console.error('exception while, sendData ', e.message)
+            }
+        }
+
+    </script>
+
+</head>
+
+<body onload="initFunction()">
+
+    <div class="myDiv">
+        <h2>Status <span id="statusID"> </span></h2>
+    </div>
+
+
+    <div style="display: flex; align-items: center;">
+        <img src="./off.svg" id="imgID" width="126px" height="126px">
+    </div>
+
+
+    <div>
+        <textarea placeholder="received data will be shown" cols="45" rows="3" id="dataStatusID"></textarea>
+    </div>
+
+    <div title="download from playground">
+        load service token from serviceToken.json file <input type="file" name="" id=""
+            onchange="loadTokenFunction(event)">
+
+        <div style="padding-top: 3rem;">
+            <button class="btn btn-primary" type="button" onclick="sendData()">send data</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
