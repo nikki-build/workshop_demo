@@ -25,7 +25,7 @@ class MyDerivedClass(serviceBase):
     def onDisconnected(self):
         print("bye bye.")
 
-    def onData(self,data):
+    def onData(self, data):
         try:
             print("we got data :", data)
         except Exception as e:

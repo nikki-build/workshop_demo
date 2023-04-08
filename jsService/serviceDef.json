@@ -8,7 +8,7 @@
     "iDf": {
         "ioType": "voidType",
         "name": "",
-        "data": {},
+        "data": {"name": "hi"},
         "desc": "bulb state"
     },
     "oDf": {

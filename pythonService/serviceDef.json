@@ -1,1 +1,25 @@
-{"stackable":false,"srvID":"TJqXP1mQN_beqGe9FakQz","instID":"GAo14XnPfRrTErVQ_OCTw","proglang":"python","sysDef":false,"iconName":"python.svg","iDf":{"ioType":"voidType","name":"","data":{},"desc":"send any data"},"oDf":{"ioType":"voidType","name":"","data":{},"desc":"counter value"},"name":"pythonTest","dispName":"pythonTest","desc":"example python","startType":"manual","isExtern":true}
+{
+    "stackable": false,
+    "srvID": "TJqXP1mQN_beqGe9FakQz",
+    "instID": "GAo14XnPfRrTErVQ_OCTw",
+    "proglang": "python",
+    "sysDef": false,
+    "iconName": "python.svg",
+    "iDf": {
+        "ioType": "voidType",
+        "name": "",
+        "data": {},
+        "desc": "send any data"
+    },
+    "oDf": {
+        "ioType": "voidType",
+        "name": "",
+        "data": {},
+        "desc": "counter value"
+    },
+    "name": "pythonTest",
+    "dispName": "pythonTest",
+    "desc": "example python",
+    "startType": "manual",
+    "isExtern": true
+}

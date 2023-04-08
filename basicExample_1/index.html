@@ -17,6 +17,18 @@
             document.getElementById("imgID").src = "off.svg"
         }
 
+        function inputChanged() {
+            let inText = document.getElementById("inputID").value
+
+            if (inText && inText.includes("on")) {
+                on()
+            }
+
+            if (inText && inText.includes("off")) {
+                off()
+            }
+        }
+
     </script>
 </head>
 
@@ -36,9 +48,10 @@
 
         <button class="btn btn-primary" style="font-size: 1.5rem ;margin: 1rem  ;padding: .5rem" width="100%"
             onclick="off()" type="button">off</button>
+
+        <input type="text" name="" id="inputID" onchange="inputChanged()"
+            style="font-size: 1.5rem ; margin: 1rem ;padding: .5rem;">
     </div>
-
-
 
 </body>
 
