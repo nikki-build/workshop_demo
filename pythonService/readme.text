@@ -1,0 +1,80 @@
+
+###################################################
+python 
+nikki.build python client depends on the following.
+===================================================
+Prerequisites: 
+1. python 2.7 or 3+
+
+
+packages required (must)
+===================================================
+
+pip install websocket
+pip install websocket-client
+pip install rx
+pip install nikki-python
+###################################################
+
+
+
+
+
+
+
+
+
+need for ml and ai
+=======================================
+Prerequisites: 
+1. python 2.7 or 3+
+=======================================
+pip install Pillow 
+pip install opencv-python
+pip install torch
+pip install torchvision
+pip install numpy
+pip install tqdm
+pip install pandas
+pip install matplotlib
+pip install cvzone
+
+
+
+
+folder structure of your python client template:
+===================================================
+    -serviceDef.json
+    -serviceToken.json             
+    -exampleBasicUsuage.py
+    -exampleSendingData.py
+    -readme.txt     
+    --libs
+
+
+how to run:
+===================================================
+
+1. make sure your dev environment is ready.
+2. download the latest serviceToken.json file and replace it with new one.
+   
+   2.1 where to find  serviceToken.json ???
+      PLEASE read information about serviceToken.json in the below sections.
+
+      1. open playground ( assuming you subscribed to playground )
+      2. among the other control buttons, click Token button.
+      3. a modal will show up which has download token button. 
+
+    2.2 where to replace serviceToken.json ???
+      1. your serviceToken.json file will be at firstLevel of your client template.
+         refer folder structure in the above section.
+
+3. open any example you like, then run.
+        
+        python exampleBasicUsuage.py
+        python  exampleSendingData.py
+
+4. update your serviceDef.json based on your requirements. read below sections for more information 
+   on serviceDef.json
+
+5. ALLWAYS replace your serviceToken.json when every you start new playground session.!!!

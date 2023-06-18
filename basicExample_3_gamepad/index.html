@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js nikki.build</title>
-   
+    <!-- https://www.talater.com/annyang/ -->
     <!-- <script src="https://raw.githubusercontent.com/ArunMichaelDsouza/joypad.js/master/dist/joypad.min.js"></script> -->
+    <!-- https://github.com/ArunMichaelDsouza/joypad.js -->
+
 
     <script>
         function on() {
@@ -19,7 +21,6 @@
         }
 
 
-
     </script>
     <script type="module">
         import './joypad.min.js';
@@ -27,22 +28,30 @@
 
         joypad.on('connect', () => {
             console.info("connected.")
-            vibrateController();
-
         })
 
         joypad.on('disconnect', () => {
             console.info("disconnected.")
-
         })
 
-   
-        joypad.on('button_press', (e) => {
-            const { buttonName } = e.detail;
-            console.log(`${buttonName} was pressed!`);
+        joypad.on('axis_move', e => {
+            console.log(e.detail);
+            return
         });
 
+        joypad.on('button_press', (e) => {
+            const { buttonName } = e.detail;
+            console.log(`${buttonName} was pressed!`,e.detail);
 
+            if (buttonName == 'button_6') {
+                on();
+            }
+
+            if (buttonName == 'button_7') {
+                off();
+            }
+
+        });
 
 
     </script>
@@ -54,7 +63,6 @@
     <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 60vh;">
         <img src="./off.svg" id="imgID" width="100%" height="126px">
     </div>
-
 
 </body>
 

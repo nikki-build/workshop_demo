@@ -1,7 +1,7 @@
 {
     "stackable": false,
-    "srvID": "TJqXP1mQN_beqGe9FakQz",
-    "instID": "GAo14XnPfRrTErVQ_OCTw",
+    "srvID": "_gcS0HxoP1Krsp3Hjwy_E",
+    "instID": "IuX3wL2a5fpZkfmF9opY9",
     "proglang": "python",
     "sysDef": false,
     "iconName": "python.svg",
@@ -9,17 +9,17 @@
         "ioType": "voidType",
         "name": "",
         "data": {},
-        "desc": "send any data"
+        "desc": ""
     },
     "oDf": {
         "ioType": "voidType",
         "name": "",
         "data": {},
-        "desc": "counter value"
+        "desc": ""
     },
-    "name": "pythonTest",
-    "dispName": "pythonTest",
-    "desc": "example python",
+    "name": "pythonservices",
+    "dispName": "pythonservices",
+    "desc": "",
     "startType": "manual",
     "isExtern": true
 }
