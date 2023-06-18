@@ -13,7 +13,7 @@ packages required (must)
 pip install websocket
 pip install websocket-client
 pip install rx
-pip install nikki-python
+pip install nikki_python 
 ###################################################
 
 
@@ -29,16 +29,10 @@ need for ml and ai
 Prerequisites: 
 1. python 2.7 or 3+
 =======================================
-pip install Pillow 
-pip install opencv-python
-pip install torch
-pip install torchvision
-pip install numpy
-pip install tqdm
-pip install pandas
-pip install matplotlib
 pip install cvzone
-
+pip install mediapipe
+pip install comtypes
+pip install pycaw 
 
 
 
