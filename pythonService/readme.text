@@ -42,6 +42,7 @@ pip install cvzone
 
 
 
+
 folder structure of your python client template:
 ===================================================
     -serviceDef.json
