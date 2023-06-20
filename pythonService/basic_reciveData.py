@@ -12,15 +12,14 @@ class MyDerivedClass(serviceBase):
 
     def onData(self, data):
         try:
-            # print("we got data :", data)
-            senddata(data)
+            print("we got data :", data)
+            
             return data
         except Exception as e:
             print("exception while processing inputdata ", e)
 
 
-def senddata(data):
-    print(data['said'], data)
+
 
 
 pyInst = MyDerivedClass()

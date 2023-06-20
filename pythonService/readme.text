@@ -17,13 +17,6 @@ pip install nikki_python
 ###################################################
 
 
-
-
-
-
-
-
-
 need for ml and ai
 =======================================
 Prerequisites: 
@@ -33,8 +26,6 @@ pip install cvzone
 pip install mediapipe
 pip install comtypes
 pip install pycaw 
-
-
 
 
 folder structure of your python client template:

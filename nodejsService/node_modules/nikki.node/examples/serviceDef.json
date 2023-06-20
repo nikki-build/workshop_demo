@@ -1,0 +1,37 @@
+{
+    "srvID": "nodejsLibrary_service",
+    "instID": "D-j43wedazyu#FspHU8n9",
+    "proglang": "nodejs",
+    "iconName": "nodejs.svg",
+    "sysDef": false,
+    "iDf": {
+        "ioType": "userDefined",
+        "name": "input params",
+        "data": {
+            "count": 0
+        },
+        "desc": "dummy input, accepting count as input param"
+    },
+    "oDf": {
+        "ioType": "userDefined",
+        "name": "output params",
+        "data": {
+            "count": 0
+        },
+        "desc": "sends the same data whichever it received."
+    },
+    "name": "nodejsService",
+    "dispName": "nodejs service",
+    "desc": "nikki.build nodejs client library. ",
+    "tags": [
+        "nodejs",
+        "js",
+        "service",
+        "client",
+        "user",
+        "build",
+        "prototype"
+    ],
+    "startType": "manual",
+    "isExtern": false
+}

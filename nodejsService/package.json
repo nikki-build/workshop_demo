@@ -1,0 +1,37 @@
+{
+  "name": "nikki.build",
+  "version": "0.1.0",
+  "description": "nikki.build nodejs client template.",
+  "main": "dist/serviceBase.js",
+  "scripts": {
+    "build": "tsc serviceBase.ts  --declaration"
+  },
+  "homepage": "https://nikki.build",
+  "keywords": [
+    "nikki",
+    "node",
+    "connectivity",
+    "DIY",
+    "build",
+    "do it yourself",
+    "prototype",
+    "rapid",
+    "developement"
+  ],
+  "author": "nikki.build",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^3.2.0",
+    "nikki.node": "^1.0.0",
+    "rxjs": "^7.5.2",
+    "ws": "^8.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.18"
+  },
+  "contributors": [
+    {
+      "name": "nikkibuild edTech Pvt Ltd."
+    }
+  ]
+}

@@ -8,7 +8,7 @@
 
     /*  YOUR conversion code 
         map your inputData to outputData.  */
-    if (speechToTextData.said && speechToTextData.said.includes("play music")) {
+    if (speechToTextData.said && speechToTextData.said.includes("play")) {
         audioPlayerData.play = true
     }
     else {
