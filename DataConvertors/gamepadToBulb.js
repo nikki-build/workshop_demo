@@ -1,14 +1,28 @@
-//Dataconvertor code for voice service to arduino LCD service
-(switchData) => {
+ 
 
-    let roboticsData =
-    {
-        print: switchData.state,
+            (gamepadData) => {
+           
+                let bulbData =  
+                {
+                    state : "on",
+                
+                };
 
-    };
 
-    /*  YOUR conversion code 
-        map your inputData to outputData.  */
+     if(gamepadData && gamepadData.data&& gamepadData.data.name && (gamepadData.data.name == "button_6") )
+{
+    bulbData.state =  "on"
+}  
 
-    return roboticsData;
+ if(gamepadData && gamepadData.data && gamepadData.data.name && (gamepadData.data.name == "button_7")) 
+{
+    bulbData.state =  "off"
 }
+    
+          
+
+                /*  YOUR conversion code 
+                    map your inputData to outputData.  */
+                
+                return bulbData;
+            }
