@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+// database code start
 var loki = require('lokijs')
 
 var db = new loki('example.db');
@@ -12,6 +12,8 @@ var stan = users.insert({ name: 'stan', email: 'stan.soap@lokijs.org', age: 29 }
 var oliver = users.insert({ name: 'oliver', email: 'oliver.soap@lokijs.org', age: 31 });
 var hector = users.insert({ name: 'hector', email: 'hector.soap@lokijs.org', age: 15 });
 var achilles = users.insert({ name: 'achilles', email: 'achilles.soap@lokijs.org', age: 31 });
+
+// database code end
 
 // console.info("data ", users.data())
     //  for serving static files.
