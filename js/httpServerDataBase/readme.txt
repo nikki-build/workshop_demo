@@ -1,3 +1,12 @@
+// install the packages
+npm install express
+
+// run the server
+node server.js
+
+
+
+
 lightweight database: 
 
 LokiJS is a document oriented database

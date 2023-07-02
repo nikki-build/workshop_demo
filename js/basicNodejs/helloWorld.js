@@ -1,3 +1,3 @@
 
-var date = Date.now()
-console.info("hello world ", date )
+var date = new Date().toUTCString()
+console.info("hello world ", date)
