@@ -13,15 +13,63 @@
 </head>
 
 <body>
-
+    File <input type="file" onchange="loadFromFile(event)">
+    range <input type="range" id="rangeChangeID" onchange="onLocationPointChanged(this.value)" min="0" max="100"
+        step="1">
     <div id="map" style="height: 100vh;"></div>
 
     <script>
 
         var lat = 12.8452
         var long = 77.6602
-        var map = L.map('map').setView([lat, long], 13);
+        var map = L.map('map').setView([lat, long], 16);
 
+        var tracks = []
+
+        function loadFromFile(event) {
+            console.info("reading file ")
+            let file = event.target.files.item(0)
+            let fName = file.name;
+
+            if (fName.includes("locationTrack")) {
+
+                console.info("reading file ", fName)
+                let reader = new FileReader();
+                reader.readAsText(file);
+                reader.onload = async (e) => {
+                    try {
+
+                        let code = e.target.result;
+                        if (code) {
+                            tracks = JSON.parse(code)
+                            console.info("read file", tracks)
+                            document.getElementById("rangeChangeID").max = tracks.length;
+                        }
+                    }
+                    catch (e) {
+                        console.error("exception while reading course def ", e.message);
+                    }
+                    return
+                }
+                return;
+            }
+            else {
+                alert("open file : locationTrack.json")
+            }
+        }
+
+        function onLocationPointChanged(index) {
+
+            if (tracks.length > index) {
+                let pos = tracks[index]
+                if (cycleIcon) {
+                    cycleIcon.setLatLng(pos)
+                    // marker.flyTo(pos, 6)
+                    map.setView(pos)
+
+                }
+            }
+        }
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -31,12 +79,10 @@
 
         var marker = L.marker([lat + .01, long + .01]).addTo(map);
 
-
-
-        var popup = L.popup()
-            .setLatLng([lat, long])
-            .setContent("Your driver is near by.")
-            .openOn(map);
+        // var popup = L.popup()
+        //     .setLatLng([lat, long])
+        //     .setContent("Your driver is near by.")
+        //     .openOn(map);
 
 
         var greenIcon = L.icon({
@@ -51,7 +97,10 @@
         });
 
 
-        L.marker([lat, long], { icon: greenIcon }).addTo(map);
+        var cycleIcon = L.marker([lat, long], { icon: greenIcon }).addTo(map);
+
+
+
 
     </script>
 

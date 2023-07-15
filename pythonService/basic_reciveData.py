@@ -24,4 +24,5 @@ class MyDerivedClass(serviceBase):
 
 pyInst = MyDerivedClass()
 pyInst.start()
+# pyInst.sendData({})
 time.sleep(1000)
