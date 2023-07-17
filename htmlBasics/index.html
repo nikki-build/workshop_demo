@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic example</title>
+
+    <style>
+        body{
+            background-color: grey;
+        }
+   
+   </style>
+
+
+    <script>
+        function textChanged(str){
+            console.info("entered ",str )
+        }
+
+        function btnClicked(){
+
+             console.info('button clicked') 
+             alert('button clicked')  
+        }
+    </script>
+
+    
+</head>
+
+
+
+<body>
+    <input type="text" name="" id=""  onchange="textChanged(this.value)"  placeholder="enter text">
+    
+    <button class="btn btn-primary" onclick="btnClicked()" type="button">click me</button>
+</body>
+</html>
